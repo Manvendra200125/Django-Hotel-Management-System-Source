@@ -1,0 +1,43 @@
+{% extends 'base/base.html'%}
+{% block content%}
+<div class="row">
+    <div class="col l6 offset-l3 m8 offset-m2 s12">
+      <div class="card-panel" style="background-color: #f3e5f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        {% if message %}
+        <p class="green-text">{{message}}</p>
+        {% endif %}
+        <h4 class="center" style="font-family: 'Stylish'; color: #6a1b9a;">Contact Us...</h4>
+  
+        <!-- Contact Form -->
+        <form action="/contact-us" method="POST">
+          {% csrf_token %}
+  
+          <!-- Name Input Field -->
+          <div class="input-field">
+            <input type="text" name="name" id="username" style="border-bottom: 1px solid #6a1b9a;">
+            <label for="username" style="color: #6a1b9a;">Name</label>
+          </div>
+  
+          <!-- Email Input Field -->
+          <div class="input-field">
+            <input type="email" name="email" id="email" required style="border-bottom: 1px solid #6a1b9a;">
+            <label for="email" style="color: #6a1b9a;">Email</label>
+          </div>
+  
+          <!-- Message Textarea -->
+          <div class="input-field">
+            <textarea id="textarea1" class="materialize-textarea" name="message" data-length="1000" style="border: 1px solid #6a1b9a; border-radius: 5px;"></textarea>
+            <label for="textarea1" style="color: #6a1b9a;">Message</label>
+          </div>
+  
+          <!-- Submit Button with Hover Effect -->
+          <div class="center">
+            <input type="submit" value="Submit" name="submit" class="btn" 
+                   style="background-color: #6a1b9a; color: white; border-radius: 5px; transition: background-color 0.3s ease;">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+{%endblock%}
