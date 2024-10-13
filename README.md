@@ -18,8 +18,13 @@ This is a Django-based room booking system that allows users to manage room book
    cd room-booking-system
 
    python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-python manage.py createsuperuser
+
+   source .venv/bin/activate
+   
+   .venv\Scripts\activate
+
+   python manage.py migrate
+
+   python manage.py runserver
+
+   python manage.py createsuperuser
